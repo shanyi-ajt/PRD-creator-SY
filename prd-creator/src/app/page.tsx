@@ -132,7 +132,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </paper>
+              </Paper>
             </Grid>
           )}
         </Grid>

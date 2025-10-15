@@ -57,11 +57,11 @@ export default function Home() {
     tbody: (props: React.ComponentProps<'tbody'>) => <TableBody {...props} />,
     tr: (props: React.ComponentProps<'tr'>) => <TableRow {...props} />,
     th: (props: React.ComponentProps<'th'>) => {
-      const { align, ...rest } = props;
+      const { align: _align, ...rest } = props;
       return <TableCell component="th" {...rest} />;
     },
     td: (props: React.ComponentProps<'td'>) => {
-      const { align, ...rest } = props;
+      const { align: _align, ...rest } = props;
       return <TableCell {...rest} />;
     },
   };
@@ -104,7 +104,7 @@ export default function Home() {
         )}
         <Grid container spacing={2} sx={{ mt: 2 }}>
           {questions.length > 0 && (
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Paper sx={{ p: 2 }}>
                 <Typography variant="h5" gutterBottom>
                   Clarifying Questions
@@ -120,7 +120,7 @@ export default function Home() {
             </Grid>
           )}
           {tickets.length > 0 && (
-            <Grid item xs={12} md={6}>
+            <Grid xs={12} md={6}>
               <Paper sx={{ p: 2 }}>
                 <Typography variant="h5" gutterBottom>
                   Suggested Tickets
@@ -132,7 +132,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </Paper>
+              </paper>
             </Grid>
           )}
         </Grid>

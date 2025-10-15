@@ -1,7 +1,3 @@
-"use client";
-
-import React, { useState } from 'react';
-import axios from 'axios';
 import {
   Container,
   TextField,
@@ -10,7 +6,6 @@ import {
   CircularProgress,
   Box,
   Paper,
-  Grid,
   Table,
   TableHead,
   TableBody,
@@ -102,9 +97,9 @@ export default function Home() {
             <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>{prd}</ReactMarkdown>
           </Paper>
         )}
-        <Grid container spacing={2} sx={{ mt: 2 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 2 }}>
           {questions.length > 0 && (
-            <Grid xs={12} md={6}>
+            <Box sx={{ width: { xs: '100%', md: 'calc(50% - 8px)' } }}>
               <Paper sx={{ p: 2 }}>
                 <Typography variant="h5" gutterBottom>
                   Clarifying Questions
@@ -117,10 +112,10 @@ export default function Home() {
                   ))}
                 </ul>
               </Paper>
-            </Grid>
+            </Box>
           )}
           {tickets.length > 0 && (
-            <Grid xs={12} md={6}>
+            <Box sx={{ width: { xs: '100%', md: 'calc(50% - 8px)' } }}>
               <Paper sx={{ p: 2 }}>
                 <Typography variant="h5" gutterBottom>
                   Suggested Tickets
@@ -133,9 +128,9 @@ export default function Home() {
                   ))}
                 </ul>
               </Paper>
-            </Grid>
+            </Box>
           )}
-        </Grid>
+        </Box>
       </Box>
     </Container>
   );

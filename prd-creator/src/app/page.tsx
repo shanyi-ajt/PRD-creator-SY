@@ -36,7 +36,7 @@ export default function Home() {
       setPrd(response.data.prd);
       setQuestions(response.data.questions);
       setTickets(response.data.tickets);
-    } catch (_error) {
+    } catch {
       setError('Failed to generate PRD. Please try again.');
     } finally {
       setLoading(false);
@@ -56,8 +56,14 @@ export default function Home() {
     thead: (props: React.ComponentProps<'thead'>) => <TableHead {...props} />,
     tbody: (props: React.ComponentProps<'tbody'>) => <TableBody {...props} />,
     tr: (props: React.ComponentProps<'tr'>) => <TableRow {...props} />,
-    th: (props: React.ComponentProps<'th'>) => <TableCell component="th" {...props} />,
-    td: (props: React.ComponentProps<'td'>) => <TableCell {...props} />,
+    th: (props: React.ComponentProps<'th'>) => {
+      const { align, ...rest } = props;
+      return <TableCell component="th" {...rest} />;
+    },
+    td: (props: React.ComponentProps<'td'>) => {
+      const { align, ...rest } = props;
+      return <TableCell {...rest} />;
+    },
   };
 
   return (

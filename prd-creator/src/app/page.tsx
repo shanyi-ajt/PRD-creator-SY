@@ -36,7 +36,7 @@ export default function Home() {
       setPrd(response.data.prd);
       setQuestions(response.data.questions);
       setTickets(response.data.tickets);
-    } catch (error) {
+    } catch (_error) {
       setError('Failed to generate PRD. Please try again.');
     } finally {
       setLoading(false);
@@ -44,20 +44,20 @@ export default function Home() {
   };
 
   const components = {
-    h1: (props: any) => <Typography variant="h4" component="h1" {...props} />,
-    h2: (props: any) => <Typography variant="h5" component="h2" {...props} />,
-    h3: (props: any) => <Typography variant="h6" component="h3" {...props} />,
-    h4: (props: any) => <Typography variant="subtitle1" component="h4" {...props} />,
-    h5: (props: any) => <Typography variant="subtitle2" component="h5" {...props} />,
-    h6: (props: any) => <Typography variant="body2" component="h6" {...props} />,
-    p: (props: any) => <Typography paragraph sx={{ marginBottom: '1em' }} {...props} />,
-    li: (props: any) => <Typography component="li" sx={{ marginBottom: '0.5em' }} {...props} />,
-    table: (props: any) => <Table {...props} />,
-    thead: (props: any) => <TableHead {...props} />,
-    tbody: (props: any) => <TableBody {...props} />,
-    tr: (props: any) => <TableRow {...props} />,
-    th: (props: any) => <TableCell component="th" {...props} />,
-    td: (props: any) => <TableCell {...props} />,
+    h1: (props: React.ComponentProps<'h1'>) => <Typography variant="h4" component="h1" {...props} />,
+    h2: (props: React.ComponentProps<'h2'>) => <Typography variant="h5" component="h2" {...props} />,
+    h3: (props: React.ComponentProps<'h3'>) => <Typography variant="h6" component="h3" {...props} />,
+    h4: (props: React.ComponentProps<'h4'>) => <Typography variant="subtitle1" component="h4" {...props} />,
+    h5: (props: React.ComponentProps<'h5'>) => <Typography variant="subtitle2" component="h5" {...props} />,
+    h6: (props: React.ComponentProps<'h6'>) => <Typography variant="body2" component="h6" {...props} />,
+    p: (props: React.ComponentProps<'p'>) => <Typography paragraph sx={{ marginBottom: '1em' }} {...props} />,
+    li: (props: React.ComponentProps<'li'>) => <Typography component="li" sx={{ marginBottom: '0.5em' }} {...props} />,
+    table: (props: React.ComponentProps<'table'>) => <Table {...props} />,
+    thead: (props: React.ComponentProps<'thead'>) => <TableHead {...props} />,
+    tbody: (props: React.ComponentProps<'tbody'>) => <TableBody {...props} />,
+    tr: (props: React.ComponentProps<'tr'>) => <TableRow {...props} />,
+    th: (props: React.ComponentProps<'th'>) => <TableCell component="th" {...props} />,
+    td: (props: React.ComponentProps<'td'>) => <TableCell {...props} />,
   };
 
   return (
